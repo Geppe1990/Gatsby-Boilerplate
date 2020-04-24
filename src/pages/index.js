@@ -3,6 +3,7 @@ import { css } from "@emotion/core"
 import { Link, graphql } from "gatsby"
 import { rhythm } from "../utils/typography"
 import Layout from "../components/layout"
+import "../scss/style.scss"
 
 export default ({ data }) => {
 	console.log(data)
@@ -41,6 +42,7 @@ export default ({ data }) => {
 									— {node.frontmatter.date}
 								</span>
 							</h3>
+							<small>{node.timeToRead} mins</small>
 							<p>{node.excerpt}</p>
 						</Link>
 					</div>
@@ -65,6 +67,7 @@ export const query = graphql`
 						slug
 					}
 					excerpt
+					timeToRead
 				}
 			}
 		}
