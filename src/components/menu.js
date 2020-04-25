@@ -8,6 +8,9 @@ export default () => {
             <Link to={`/`} css={css`padding:0 5px`}>
                 Home
             </Link>
+            <Link to={`/blog`} css={css`padding:0 5px`}>
+                Blog
+            </Link>
             <Link to={`/about/`} css={css`padding:0 5px`}>
                 About
             </Link>
