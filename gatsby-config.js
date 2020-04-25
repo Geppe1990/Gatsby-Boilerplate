@@ -7,10 +7,12 @@
 module.exports = {
 	/* Your site config here */
 	siteMetadata: {
-		title: 'Giuseppe Vigneri',
-		author: 'Giuseppe Vigneri',
-		description: 'Questa è la descrizione del sito',
-		siteUrl: process.env.DEPLOY_PRIME_URL,
+		title: "Severus Snape",
+		titleTemplate: "%s · The Real Hero",
+		description: "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
+		url: "https://www.doe.com", // No trailing slash allowed!
+		image: "/images/snape.jpg", // Path to your image you placed in the 'static' folder
+		twitterUsername: "@geppegram",
 	},
 	plugins: [
 		{
@@ -37,6 +39,7 @@ module.exports = {
 				],
 			},
 		},
+		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-sharp',
 		// 'gatsby-plugin-feed-mdx',
 		'gatsby-plugin-mdx',
