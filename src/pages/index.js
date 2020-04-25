@@ -17,8 +17,8 @@ export default ({ data }) => {
 				>
 				Amazing Pandas Eating Things
 				</h1>
-				<h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-				{data.allMarkdownRemark.edges.map(({ node }) => (
+				<h4>{data.allMdx.totalCount} Posts</h4>
+				{data.allMdx.edges.map(({ node }) => (
 					<div key={node.id}>
 						<Link
 						to={node.fields.slug}
@@ -53,7 +53,7 @@ export default ({ data }) => {
 
 export const query = graphql`
 	query {
-		allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+		allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
 			totalCount
 			edges {
 				node {
