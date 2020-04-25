@@ -1,12 +1,9 @@
 
 import React from "react"
-import { css } from "@emotion/core"
-
-import { rhythm } from "../utils/typography"
 
 export default ({ children }) => {
 	return (
-		<aside>
+		<aside className="column is-2">
 			{children}
 		</aside>
 	)

@@ -39,16 +39,10 @@ module.exports = {
 				],
 			},
 		},
+		'gatsby-plugin-sass',
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-sharp',
 		// 'gatsby-plugin-feed-mdx',
 		'gatsby-plugin-mdx',
-		'gatsby-plugin-emotion',
-		{
-			resolve: 'gatsby-plugin-typography',
-			options: {
-				pathToConfigModule: 'src/utils/typography'
-			},
-		},
 	],
 }

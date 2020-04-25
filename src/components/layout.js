@@ -1,27 +1,21 @@
 import React from "react"
-import { css } from "@emotion/core"
-
-import { rhythm } from "../utils/typography"
 import Menu from "./menu"
 import Sidebar from "../components/sidebar"
 
 export default ({ children }) => {
 	return (
-		<>
+		<main>
 			<Menu />
-			<div
-				css={css`
-					margin: 0 auto;
-					max-width: 800px;
-					padding: ${rhythm(2)};
-					padding-top: ${rhythm(1.5)};
-				`}
-			>
-				{children}
-				<Sidebar>
-					Contenuto sidebar
-				</Sidebar>
+			<div className="container">
+				<div className="columns">
+					<div className="column is-10">
+						{children}
+					</div>
+					<Sidebar>
+						Contenuto sidebar
+					</Sidebar>
+				</div>
 			</div>
-		</>
+		</main>
 	)
 }

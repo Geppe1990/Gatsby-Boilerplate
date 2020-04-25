@@ -1,35 +1,41 @@
 import React from "react"
 import { Link } from "gatsby"
-import { css } from "@emotion/core"
 import { useStaticQuery, graphql } from "gatsby"
 
 export default () => {
-const data= useStaticQuery(
-	graphql`
-        query {
-            site {
-                siteMetadata {
-	                title
-	            }
-	        }
-        }
-    `
-)
+    const data= useStaticQuery(
+        graphql`
+            query {
+                site {
+                    siteMetadata {
+                        title
+                    }
+                }
+            }
+        `
+    )
 
     return (
-        <nav css={css`display:flex; justify-content:flex-end; padding:20px 0;`}>
-            <Link to={`/`} css={css`padding:0 5px`}>
-                {data.site.siteMetadata.title}
-            </Link>
-            <Link to={`/blog`} css={css`padding:0 5px`}>
-                Blog
-            </Link>
-            <Link to={`/about/`} css={css`padding:0 5px`}>
-                About
-            </Link>
-            <Link to={`/about/`} css={css`padding:0 0 0 5px`}>
-                Test
-            </Link>
+        <nav className="navbar" role="navigation" aria-label="main navigation">
+            <div className="navbar-brand">
+                <Link className="navbar-item" href="/">
+                    <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+                </Link>
+
+                <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarBasicExample" className="navbar-menu">
+		        <div className="navbar-start">
+                    <Link className="navbar-item" to={`/`}>{data.site.siteMetadata.title}</Link>
+                    <Link className="navbar-item" to={`/blog`}>Blog</Link>
+                    <Link className="navbar-item" to={`/about/`}>About</Link>
+                    <Link className="navbar-item" to={`/about/`}>Test</Link>
+                </div>
+            </div>
         </nav>
     )
 }
