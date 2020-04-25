@@ -6,7 +6,7 @@ export default ({ children }) => {
 	return (
 		<main>
 			<Menu />
-			<div className="container">
+			<div className="container content">
 				<div className="columns">
 					<div className="column is-10">
 						{children}
