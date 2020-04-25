@@ -7,7 +7,10 @@
 module.exports = {
 	/* Your site config here */
 	siteMetadata: {
-		title: 'Pandas Eating Lots'
+		title: 'Giuseppe Vigneri',
+		author: 'Giuseppe Vigneri',
+		description: 'Questa è la descrizione del sito',
+		siteUrl: process.env.DEPLOY_PRIME_URL,
 	},
 	plugins: [
 		{
@@ -21,10 +24,21 @@ module.exports = {
 			resolve: 'gatsby-plugin-mdx',
 			options: {
 				extensions: [".mdx", ".md"],
-				gatsbyRemarkPlugins: [],
+				gatsbyRemarkPlugins: [
+					'gatsby-remark-copy-linked-files',
+					{
+						resolve: 'gatsby-remark-images',
+						options: {
+							maxWidth: 1500,
+							linkImagesToOriginal: false,
+							withWebp: true,
+						},
+					},
+				],
 			},
 		},
-		'gatsby-plugin-feed-mdx',
+		'gatsby-plugin-sharp',
+		// 'gatsby-plugin-feed-mdx',
 		'gatsby-plugin-mdx',
 		'gatsby-plugin-emotion',
 		{
