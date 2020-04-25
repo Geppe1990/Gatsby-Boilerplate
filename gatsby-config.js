@@ -7,9 +7,9 @@
 module.exports = {
 	/* Your site config here */
 	siteMetadata: {
-		title: "Severus Snape",
+		title: "Il mio blog",
 		titleTemplate: "%s · The Real Hero",
-		description: "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
+		description: "Questa è la descrizione del sito",
 		url: "https://www.doe.com", // No trailing slash allowed!
 		image: "/images/snape.jpg", // Path to your image you placed in the 'static' folder
 		twitterUsername: "@geppegram",
