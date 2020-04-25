@@ -12,7 +12,7 @@ export default ({ data }) => {
                 title={post.frontmatter.title}
                 description={post.frontmatter.description || post.excerpt || 'nothin’'}
                 // image={post.frontmatter.image.childImageSharp.sizes.src}
-                // pathname={post.fields.slug}
+                //pathname={post.fileAbsolutePath}
                 article
             />
             <div>
@@ -27,6 +27,7 @@ export const query = graphql`
     query($slug: String!) {
         mdx(fields: {slug: {eq: $slug } }) {
             body
+            excerpt
             frontmatter {
                 title
             }
