@@ -6,14 +6,16 @@ export default ({ children }) => {
 	return (
 		<main>
 			<Menu />
-			<div className="container content">
-				<div className="columns">
-					<div className="column is-10">
-						{children}
+			<div className="section">
+				<div className="container content">
+					<div className="columns">
+						<div className="column is-10">
+							{children}
+						</div>
+						<Sidebar>
+							Contenuto sidebar
+						</Sidebar>
 					</div>
-					<Sidebar>
-						Contenuto sidebar
-					</Sidebar>
 				</div>
 			</div>
 		</main>
