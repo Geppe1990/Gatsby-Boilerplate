@@ -1,27 +1,27 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import BlogExceprt from "../components/blog-excerpt"
 
 const CategoryList = ({
 		pageContext: { category },
 		data: { allMdx },
 		}) => (
 		<Layout>
-				<h1>{category} Articles</h1>
-				<ul>
-						{allMdx.edges.map(({ node }) => {
-								return (
-										<li key={node.frontmatter.title}>
-										<Link to={node.fields.slug}>
-												{node.frontmatter.title}
-										</Link>
-										<div>
-												<time>{node.frontmatter.date}</time>
-										</div>
-										</li>
-								)
-						})}
-				</ul>
+			<h1>{category} Articles</h1>
+
+			{allMdx.edges.map(({ node }) => {
+				return (
+					<BlogExceprt
+						id={node.frontmatter.id}
+						slug={node.fields.slug}
+						title={node.frontmatter.title}
+						date={node.frontmatter.date}
+						timeToRead={node.timeToRead}
+						excerpt={node.excerpt}
+					/>
+				)
+			})}
 		</Layout>
 )
 
@@ -30,6 +30,7 @@ export const query = graphql`
 		allMdx(filter: { id: { in: $ids } }) {
 			edges {
 				node {
+					id
 					frontmatter {
 						title
 						date(formatString: "MMM D, YYYY")
@@ -37,6 +38,8 @@ export const query = graphql`
 					fields {
 						slug
 					}
+					excerpt
+					timeToRead
 				}
 			}
 		}

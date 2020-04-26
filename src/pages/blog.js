@@ -1,6 +1,7 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import BlogExceprt from "../components/blog-excerpt"
 
 export default ({ data }) => (
     <Layout>
@@ -11,16 +12,14 @@ export default ({ data }) => (
         <h4>{data.allMdx.totalCount} Posts</h4>
 
         {data.allMdx.edges.map(({ node }) => (
-            <div key={node.id}>
-                <Link to={node.fields.slug}>
-                    <h3>
-                        {node.frontmatter.title}{" "}
-                        <span>— {node.frontmatter.date}</span>
-                    </h3>
-                </Link>
-                <small>{node.timeToRead} mins</small>
-                <p>{node.excerpt}</p>
-            </div>
+            <BlogExceprt
+                id={node.id}
+                slug={node.fields.slug}
+                title={node.frontmatter.title}
+                date={node.frontmatter.title}
+                timeToRead={node.timeToRead}
+                excerpt={node.excerpt}
+            />
         ))}
     </Layout>
 )
