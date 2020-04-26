@@ -1,8 +1,7 @@
 ---
 title: "Sweet Pandas Eating Sweets"
 date: "2017-08-10"
-slug: gatsby-categories
-categories: ["GatsbyJS", "React", "Test"]
+categories: ["gatsbyjs", "react", "test"]
 ---
 
 Pandas are really sweet.

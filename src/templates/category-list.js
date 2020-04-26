@@ -11,7 +11,7 @@ const CategoryList = ({
             {allMdx.edges.map(({ node }) => {
                 return (
                     <li key={node.frontmatter.title}>
-                    <Link to={`blog/${node.frontmatter.slug}`}>
+                    <Link to={node.fields.slug}>
                         {node.frontmatter.title}
                     </Link>
                     <div>
@@ -30,9 +30,11 @@ export const query = graphql`
       edges {
         node {
           frontmatter {
-            slug
             title
             date(formatString: "MMM D, YYYY")
+          }
+          fields {
+            slug
           }
         }
       }
