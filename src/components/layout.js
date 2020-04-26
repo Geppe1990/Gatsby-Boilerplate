@@ -6,18 +6,10 @@ export default ({ children }) => {
 	return (
 		<main>
 			<Menu />
-			<div className="section">
-				<div className="container content">
-					<div className="columns">
-						<div className="column is-9">
-							{children}
-						</div>
-						<Sidebar>
-							Contenuto sidebar
-						</Sidebar>
-					</div>
-				</div>
-			</div>
+			{children}
+			<Sidebar>
+				Contenuto sidebar
+			</Sidebar>
 		</main>
 	)
 }

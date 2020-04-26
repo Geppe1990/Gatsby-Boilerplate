@@ -11,7 +11,7 @@ export default ({ data }) => (
         </p>
         <h4>{data.allMdx.totalCount} Posts</h4>
 
-        <div className="columns is-multiline">
+        <div>
             {data.allMdx.edges.map(({ node }) => (
                 <BlogExceprt
                     key={node.id}
