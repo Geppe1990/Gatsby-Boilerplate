@@ -25,3 +25,11 @@ $input-border-color: transparent;
 $input-shadow: none;
 
 @import "~bulma/bulma.sass";
+
+.breadcrumb {
+    li {
+        + li {
+            margin-top: 0;
+        }
+    }
+}
