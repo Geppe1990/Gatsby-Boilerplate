@@ -9,7 +9,7 @@ export default ({ children }) => {
 			<div className="section">
 				<div className="container content">
 					<div className="columns">
-						<div className="column is-10">
+						<div className="column is-9">
 							{children}
 						</div>
 						<Sidebar>

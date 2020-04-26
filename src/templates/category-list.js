@@ -10,9 +10,11 @@ const CategoryList = ({
 		<Layout>
 			<h1>{category} Articles</h1>
 
+			<div className="columns is-multiline">
 			{allMdx.edges.map(({ node }) => {
 				return (
 					<BlogExceprt
+						key={node.id}
 						id={node.frontmatter.id}
 						slug={node.fields.slug}
 						title={node.frontmatter.title}
@@ -22,6 +24,7 @@ const CategoryList = ({
 					/>
 				)
 			})}
+			</div>
 		</Layout>
 )
 

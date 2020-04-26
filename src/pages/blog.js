@@ -11,16 +11,19 @@ export default ({ data }) => (
         </p>
         <h4>{data.allMdx.totalCount} Posts</h4>
 
-        {data.allMdx.edges.map(({ node }) => (
-            <BlogExceprt
-                id={node.id}
-                slug={node.fields.slug}
-                title={node.frontmatter.title}
-                date={node.frontmatter.title}
-                timeToRead={node.timeToRead}
-                excerpt={node.excerpt}
-            />
-        ))}
+        <div className="columns is-multiline">
+            {data.allMdx.edges.map(({ node }) => (
+                <BlogExceprt
+                    key={node.id}
+                    id={node.id}
+                    slug={node.fields.slug}
+                    title={node.frontmatter.title}
+                    date={node.frontmatter.date}
+                    timeToRead={node.timeToRead}
+                    excerpt={node.excerpt}
+                />
+            ))}
+        </div>
     </Layout>
 )
 
