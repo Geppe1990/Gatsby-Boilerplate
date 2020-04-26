@@ -2,17 +2,11 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { DiscussionEmbed } from "disqus-react"
 import SEO from "../components/SEO"
 
 export default ({ data }) => {
     const post = data.mdx
-    const slug = post.fields.slug
-    const title = post.frontmatter.title
-    const disqusConfig = {
-        shortname: process.env.GATSBY_DISQUS_NAME,
-        config: { identifier: slug, title },
-    }
+
     return (
         <Layout>
             <SEO
@@ -31,7 +25,6 @@ export default ({ data }) => {
                 )}
 
                 <MDXRenderer>{post.body}</MDXRenderer>
-                <DiscussionEmbed {...disqusConfig} />
             </div>
         </Layout>
     )
