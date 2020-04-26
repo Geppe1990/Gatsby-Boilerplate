@@ -19,10 +19,11 @@ export default ({ data }) => {
 
             <div>
                 <h1>{post.frontmatter.title}</h1>
-
-                {post.frontmatter.categories.map((category, i) =>
-                    <Link key={i} to={'/category/'+category} className="tag is-primary is-small">{category}</Link>
-                )}
+                <div className="tags are-small">
+                    {post.frontmatter.categories.map((category, i) =>
+                        <Link key={i} to={'/category/'+category} className="tag is-primary">{category}</Link>
+                    )}
+                </div>
 
                 <MDXRenderer>{post.body}</MDXRenderer>
             </div>

@@ -19,14 +19,14 @@ export default () => {
         <nav className="navbar" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
                 <Link className="navbar-item" to="/">
-                    <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+                    <img src="https://bulma.io/images/bulma-logo.png" alt="Menu" width="112" height="28" />
                 </Link>
 
-                <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <button className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
-                </a>
+                </button>
             </div>
             <div id="navbarBasicExample" className="navbar-menu">
 		        <div className="navbar-start">
