@@ -39,11 +39,11 @@ module.exports = {
 				],
 			},
 		},
-		'gatsby-plugin-sass',
 		'gatsby-plugin-styled-components',
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-sharp',
 		// 'gatsby-plugin-feed-mdx',
 		'gatsby-plugin-mdx',
+		'gatsby-plugin-postcss'
 	],
 }
