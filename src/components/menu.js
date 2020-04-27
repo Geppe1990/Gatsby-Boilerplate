@@ -16,11 +16,19 @@ export default () => {
     )
 
     return (
-        <ol>
-            <li><Link to={`/`}>{data.site.siteMetadata.title}</Link></li>
-            <li><Link to={`/blog`}>Blog</Link></li>
-            <li><Link to={`/about/`}>About</Link></li>
-            <li><Link to={`/about/`}>Test</Link></li>
-        </ol>
+        <ul className="flex">
+            <li className="mr-6">
+                <Link className="text-blue-500 hover:text-blue-800 " to={`/`}>{data.site.siteMetadata.title}</Link>
+            </li>
+            <li className="mr-6">
+                <Link className="text-blue-500 hover:text-blue-800 " to={`/blog`}>Blog</Link>
+            </li>
+            <li className="mr-6">
+                <Link className="text-blue-500 hover:text-blue-800 " to={`/about/`}>About</Link>
+            </li>
+            <li className="mr-6">
+                <Link className="text-blue-500 hover:text-blue-800 " to={`/about/`}>Test</Link>
+            </li>
+        </ul>
     )
 }
