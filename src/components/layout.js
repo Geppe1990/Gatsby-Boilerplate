@@ -5,7 +5,7 @@ import "../css/global.css"
 
 export default ({ children }) => {
 	return (
-		<main>
+		<main className="container">
 			<Menu />
 			{children}
 			<Sidebar>
