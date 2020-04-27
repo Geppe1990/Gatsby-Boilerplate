@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import BlogExceprt from "../components/blog-excerpt"
+import BlogExceprt from "../templates/blog-excerpt"
 
 export default ({ data }) => (
     <Layout>
