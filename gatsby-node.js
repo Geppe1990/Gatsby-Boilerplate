@@ -41,6 +41,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 			}
 		}
 	`)
+
 	const {
 		data: { allMdx },
 	  } = await graphql(`
@@ -57,6 +58,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 			}
 		}
 	`)
+
+	//Creo le pagine archivio blog
 	result.data.allMdx.edges.forEach(({ node }) => {
 		createPage({
 			path: node.fields.slug,
@@ -68,6 +71,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 	})
 
 
+	//Creo le pagine archivio di categoria
 	const dedupedCategories = dedupeCategories(allMdx)
 
 	dedupedCategories.forEach(category => {
