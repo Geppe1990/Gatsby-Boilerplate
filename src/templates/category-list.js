@@ -10,7 +10,7 @@ const CategoryList = ({
 		<Layout>
 			<h1>{category} Articles</h1>
 
-			<div>
+			<div className="flex justify-between flex-wrap p-6 bg-gray-300">
 				{allMdx.edges.map(({ node }) => {
 					return (
 						<BlogExceprt

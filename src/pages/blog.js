@@ -11,7 +11,7 @@ export default ({ data }) => (
         </p>
         <h4>{data.allMdx.totalCount} Posts</h4>
 
-        <div>
+        <div className="flex justify-between flex-wrap p-6 bg-gray-300">
             {data.allMdx.edges.map(({ node }) => (
                 <BlogExceprt
                     key={node.id}
