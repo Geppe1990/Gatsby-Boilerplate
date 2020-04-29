@@ -33,25 +33,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 			allMdx {
 				edges {
 					node {
-						fields {
-							slug
-						}
-					}
-				}
-			}
-		}
-	`)
-
-	const {
-		data: { allMdx },
-	  } = await graphql(`
-		query {
-			allMdx {
-				edges {
-					node {
 						id
 						frontmatter {
 							categories
+						}
+						fields {
+							slug
 						}
 					}
 				}
@@ -72,7 +59,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 
 	//Creo le pagine archivio di categoria
-	const dedupedCategories = dedupeCategories(allMdx)
+	const dedupedCategories = dedupeCategories(result.data.allMdx)
 
 	dedupedCategories.forEach(category => {
 		reporter.info(`Creating page: category/${category}`)
@@ -83,7 +70,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 			context: {
 				category,
 
-				ids: allMdx.edges
+				ids: result.data.allMdx.edges
 				.filter(({ node }) => {
 					return node.frontmatter.categories.includes(category)
 				})
