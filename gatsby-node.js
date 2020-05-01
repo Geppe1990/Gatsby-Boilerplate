@@ -46,18 +46,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 		}
 	`)
 
-	//Creo le pagine archivio blog
-	// result.data.allMdx.edges.forEach(({ node }) => {
-	// 	createPage({
-	// 		path: node.fields.slug,
-	// 		component: path.resolve('./src/templates/post.js'),
-	// 		context: {
-	// 			slug: node.fields.slug
-	// 		},
-	// 	})
-	// })
+	//Creo le pagine da mdx
+	result.data.allMdx.edges.forEach(({ node }) => {
+		createPage({
+			path: node.fields.slug,
+			component: path.resolve('./src/templates/post.js'),
+			context: {
+				slug: node.fields.slug
+			},
+		})
+	})
 
-	//Creo le pagine archivio blog
+	//Creo la paginazione dell'archivio blog
 	const posts = result.data.allMdx.edges
 	const postPerPage = 6
 	const numPages = Math.ceil(posts.length / postPerPage)
