@@ -1,10 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
-import { render } from "react-dom"
+// import { render } from "react-dom"
 
 export default ({ data, pageContext }) => {
-    // guardare come passare queste variabili
     const { currentPage, numPages } = pageContext;
     const isFirst = currentPage === 1;
     const isLast = currentPage === numPages;
