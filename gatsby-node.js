@@ -17,11 +17,11 @@ function dedupeCategories(allMdx) {
 exports.onCreateNode = ({ node, getNode, actions }) => {
 	const { createNodeField } = actions
 	if (node.internal.type === 'Mdx') {
-		const slug = createFilePath({ node, getNode, basePath: 'pages' })
+		const value = createFilePath({ node, getNode, basePath: 'pages' })
 		createNodeField({
 			node,
 			name: 'slug',
-			value: slug,
+			value,
 		})
 	}
 }
@@ -47,12 +47,30 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 	`)
 
 	//Creo le pagine archivio blog
-	result.data.allMdx.edges.forEach(({ node }) => {
+	// result.data.allMdx.edges.forEach(({ node }) => {
+	// 	createPage({
+	// 		path: node.fields.slug,
+	// 		component: path.resolve('./src/templates/post.js'),
+	// 		context: {
+	// 			slug: node.fields.slug
+	// 		},
+	// 	})
+	// })
+
+	//Creo le pagine archivio blog
+	const posts = result.data.allMdx.edges
+	const postPerPage = 6
+	const numPages = Math.ceil(posts.length / postPerPage)
+
+	Array.from({ length: numPages }).forEach((_, i) => {
 		createPage({
-			path: node.fields.slug,
-			component: path.resolve('./src/templates/post.js'),
+			path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+			component: path.resolve("./src/templates/blog-list.js"),
 			context: {
-				slug: node.fields.slug
+				limit: postPerPage,
+				skip: i * postPerPage,
+				numPages,
+				currentPage: i + 1,
 			},
 		})
 	})

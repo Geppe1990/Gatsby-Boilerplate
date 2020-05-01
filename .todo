@@ -1,4 +1,3 @@
-Cercare come vengono diversificate le cartelle templates, components e pages
 Aggiungere la pagination alle pagine con più di 10 contenuti
 Gestire la sitemap
 Gestire la PWA
@@ -10,3 +9,4 @@ Docs:
 https://www.samdawson.dev/article/gatsby-categories
 https://dev.to/jakedohm_34/using-tailwind-with-gatsby-js-10fj
 https://www.youtube.com/watch?v=UBOj6rqRUME
+https://nickymeuleman.netlify.app/blog/gatsby-pagination
