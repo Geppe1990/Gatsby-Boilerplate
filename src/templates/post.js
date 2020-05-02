@@ -21,7 +21,7 @@ export default ({ data }) => {
                 <h1>{post.frontmatter.title}</h1>
                 <div className="tags are-small">
                     {post.frontmatter.category.map((category, i) =>
-                        <Link key={i} to={category} className="tag is-primary">{category}</Link>
+                        <Link key={i} to={`/${category}`} className="tag is-primary">{category}</Link>
                     )}
                 </div>
 
