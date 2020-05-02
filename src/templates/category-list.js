@@ -3,10 +3,16 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 
 export default ({ data, pageContext }) => {
-	console.log(data)
+	const { currentPage, numPages } = pageContext;
+	const isFirst = currentPage === 1;
+	const isLast = currentPage === numPages;
+	const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString();
+	const nextPage = (currentPage + 1).toString();
+	const category = pageContext.category;
+
 	return (
 		<Layout>
-			{/* <h1>{data} Articles</h1> */}
+			<h1>{category} Articles</h1>
 
 			<div className="flex justify-between flex-wrap p-6 bg-gray-300">
 				{data.allMdx.edges.map(({ node }) => {
@@ -28,48 +34,43 @@ export default ({ data, pageContext }) => {
 					)
 				})}
 			</div>
-			<ul>
-				{Array.from({ length: pageContext.numPages }).map((item, i) => {
-					const index = i + 1
-					const category = pageContext.category
-					const link =
-						index === 1
-						? `/${category}`
-						: `/${category}/${index}`
-					return (
-						<li>
-						{pageContext.currentPage === index ? (
-							<span>{index}</span>
-						) : (
-							<a href={link}>{index}</a>
-						)}
-						</li>
-					)
-				})}
-			</ul>
+			<div className="flex justify-between flex-wrap">
+				{!isFirst && (
+					<Link to={`/${category}/${prevPage}`} rel="next">← Previous Page</Link>
+				)}
+				{Array.from({ length: numPages }, (_, i) => (
+					<Link key={`pagination-number${i + 1}`} to={`/${category}/${i === 0 ? "" : i + 1}`}>
+					{i + 1}
+					</Link>
+				))}
+				{!isLast && (
+					<Link to={`/${category}/${nextPage}`} rel="next">Next Page →</Link>
+				)}
+			</div>
 		</Layout>
 )}
 
 export const query = graphql`
-query blogPostsListByCategory($category: String, $skip: Int!, $limit: Int!) {
-    allMdx(
-		sort: { fields: [frontmatter___date], order: DESC }
-		filter: { frontmatter: { category: { in: [$category] } } }
-		limit: $limit
-		skip: $skip
-	  ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            date
-            category
-          }
-        }
-      }
-    }
-  }
+	query blogPostsListByCategory($category: String, $skip: Int!, $limit: Int!) {
+		allMdx(
+			sort: { fields: [frontmatter___date], order: DESC }
+			filter: { frontmatter: { category: { in: [$category] } } }
+			limit: $limit
+			skip: $skip
+		) {
+			edges {
+				node {
+					id
+					fields {
+						slug
+					}
+					frontmatter {
+						title
+						date
+						category
+					}
+				}
+			}
+		}
+	}
 `
