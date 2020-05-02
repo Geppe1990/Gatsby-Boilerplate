@@ -1,8 +1,9 @@
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
+const blogLayout = path.resolve("./src/templates/blog-list.js")
 const blogCategoryLayout = path.resolve(`./src/templates/category-list.js`)
-const blogLayout = path.resolve('./src/templates/post.js')
+const postLayout = path.resolve('./src/templates/post.js')
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
 	const { createNodeField } = actions
@@ -40,7 +41,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 	result.data.allMdx.edges.forEach(({ node }) => {
 		createPage({
 			path: node.fields.slug,
-			component: path.resolve('./src/templates/post.js'),
+			component: postLayout,
 			context: {
 				slug: node.fields.slug
 			},
@@ -55,7 +56,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 	Array.from({ length: numPages }).forEach((_, i) => {
 		createPage({
 			path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-			component: path.resolve("./src/templates/blog-list.js"),
+			component: blogLayout,
 			context: {
 				limit: postsPerPage,
 				skip: i * postsPerPage,
@@ -72,7 +73,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 		post.node.frontmatter.category.forEach(cat => categories.push(cat))
 		createPage({
 			path: post.node.fields.slug,
-			component: blogLayout,
+			component: postLayout,
 			context: {
 				slug: post.node.fields.slug,
 			},
