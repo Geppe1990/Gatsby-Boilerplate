@@ -4,6 +4,7 @@ date: "2017-08-10"
 category:
   - test
   - react
+path: "ciccio-patata"
 ---
 
 Pandas are really sweet.

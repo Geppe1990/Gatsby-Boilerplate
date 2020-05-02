@@ -8,11 +8,12 @@ const postLayout = path.resolve('./src/templates/post.js')
 exports.onCreateNode = ({ node, getNode, actions }) => {
 	const { createNodeField } = actions
 	if (node.internal.type === 'Mdx') {
-		const value = createFilePath({ node, getNode, basePath: 'pages' })
+		let slug = typeof node.frontmatter.path === "undefined" ? createFilePath({ node, getNode, basePath: 'pages' }) : `blog/${node.frontmatter.path}`
+
 		createNodeField({
 			node,
 			name: 'slug',
-			value,
+			value: slug,
 		})
 	}
 }

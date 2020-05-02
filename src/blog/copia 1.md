@@ -4,6 +4,7 @@ date: "2017-08-10"
 category:
   - news
   - events
+path: pippo-asd
 ---
 
 Pandas are really sweet.
