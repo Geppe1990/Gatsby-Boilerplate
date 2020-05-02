@@ -1,7 +1,9 @@
 ---
 title: "copia 10"
 date: "2017-08-10"
-categories: ["gatsbyjs"]
+category:
+  - test
+  - events
 ---
 
 Pandas are really sweet.

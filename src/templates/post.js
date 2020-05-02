@@ -20,7 +20,7 @@ export default ({ data }) => {
             <div>
                 <h1>{post.frontmatter.title}</h1>
                 <div className="tags are-small">
-                    {post.frontmatter.categories.map((category, i) =>
+                    {post.frontmatter.category.map((category, i) =>
                         <Link key={i} to={'/category/'+category} className="tag is-primary">{category}</Link>
                     )}
                 </div>
@@ -38,7 +38,7 @@ export const query = graphql`
             excerpt
             frontmatter {
                 title
-                categories
+                category
             }
             fields {
                 slug

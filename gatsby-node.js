@@ -1,18 +1,8 @@
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-function dedupeCategories(allMdx) {
-	const uniqueCategories = new Set()
-
-	allMdx.edges.forEach(({ node }) => {
-
-		node.frontmatter.categories.forEach(category => {
-		uniqueCategories.add(category)
-		})
-	})
-
-	return Array.from(uniqueCategories)
-}
+const blogCategoryLayout = path.resolve(`./src/templates/category-list.js`)
+const blogLayout = path.resolve('./src/templates/post.js')
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
 	const { createNodeField } = actions
@@ -35,7 +25,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 					node {
 						id
 						frontmatter {
-							categories
+							category
 						}
 						fields {
 							slug
@@ -59,16 +49,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 	//Creo la paginazione dell'archivio blog
 	const posts = result.data.allMdx.edges
-	const postPerPage = 6
-	const numPages = Math.ceil(posts.length / postPerPage)
+	const postsPerPage = 6
+	const numPages = Math.ceil(posts.length / postsPerPage)
 
 	Array.from({ length: numPages }).forEach((_, i) => {
 		createPage({
 			path: i === 0 ? `/blog` : `/blog/${i + 1}`,
 			component: path.resolve("./src/templates/blog-list.js"),
 			context: {
-				limit: postPerPage,
-				skip: i * postPerPage,
+				limit: postsPerPage,
+				skip: i * postsPerPage,
 				numPages,
 				currentPage: i + 1,
 			},
@@ -77,23 +67,41 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 
 	//Creo le pagine archivio di categoria
-	const dedupedCategories = dedupeCategories(result.data.allMdx)
-
-	dedupedCategories.forEach(category => {
-		reporter.info(`Creating page: category/${category}`)
+	const categories = []
+	posts.forEach((post, index) => {
+		post.node.frontmatter.category.forEach(cat => categories.push(cat))
 		createPage({
-			path: `category/${category}`,
-			component: require.resolve("./src/templates/category-list.js"),
-
+			path: post.node.fields.slug,
+			component: blogLayout,
 			context: {
-				category,
-
-				ids: result.data.allMdx.edges
-				.filter(({ node }) => {
-					return node.frontmatter.categories.includes(category)
-				})
-				.map(({node}) => node.id),
+				slug: post.node.fields.slug,
 			},
+		})
+	})
+
+	const countCategories = categories.reduce((prev, curr) => {
+		prev[curr] = (prev[curr] || 0) + 1
+		return prev
+	}, {})
+
+	const allCategories = Object.keys(countCategories)
+	allCategories.forEach((cat, i) => {
+		const link = `${cat}`
+		Array.from({
+			length: Math.ceil(countCategories[cat] / postsPerPage),
+		}).forEach((_, i) => {
+			createPage({
+				path: i === 0 ? link : `${link}/${i + 1}`,
+				component: blogCategoryLayout,
+				context: {
+					allCategories: allCategories,
+					category: cat,
+					limit: postsPerPage,
+					skip: i * postsPerPage,
+					currentPage: i + 1,
+					numPages: Math.ceil(countCategories[cat] / postsPerPage),
+				},
+			})
 		})
 	})
 }

@@ -1,7 +1,9 @@
 ---
 title: "copia 1"
 date: "2017-08-10"
-categories: ["gatsbyjs", "react", "test"]
+category:
+  - news
+  - events
 ---
 
 Pandas are really sweet.

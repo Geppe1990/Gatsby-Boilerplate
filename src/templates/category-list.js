@@ -2,15 +2,14 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 
-const CategoryList = ({
-	pageContext: { category },
-	data: { allMdx },
-		}) => (
+export default ({ data, pageContext }) => {
+	console.log(data)
+	return (
 		<Layout>
-			<h1>{category} Articles</h1>
+			{/* <h1>{data} Articles</h1> */}
 
 			<div className="flex justify-between flex-wrap p-6 bg-gray-300">
-				{allMdx.edges.map(({ node }) => {
+				{data.allMdx.edges.map(({ node }) => {
 					return (
 						<div key={node.id} className="max-w-sm rounded overflow-hidden shadow-lg bg-white mb-3">
 							<img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains" />
@@ -29,28 +28,48 @@ const CategoryList = ({
 					)
 				})}
 			</div>
+			<ul>
+				{Array.from({ length: pageContext.numPages }).map((item, i) => {
+					const index = i + 1
+					const category = pageContext.category
+					const link =
+						index === 1
+						? `/${category}`
+						: `/${category}/${index}`
+					return (
+						<li>
+						{pageContext.currentPage === index ? (
+							<span>{index}</span>
+						) : (
+							<a href={link}>{index}</a>
+						)}
+						</li>
+					)
+				})}
+			</ul>
 		</Layout>
-)
+)}
 
 export const query = graphql`
-	query CategoryListQuery($ids: [String]!) {
-		allMdx(filter: { id: { in: $ids } }) {
-			edges {
-				node {
-					id
-					frontmatter {
-						title
-						date(formatString: "MMM D, YYYY")
-					}
-					fields {
-						slug
-					}
-					excerpt
-					timeToRead
-				}
-			}
-		}
-	}
+query blogPostsListByCategory($category: String, $skip: Int!, $limit: Int!) {
+    allMdx(
+		sort: { fields: [frontmatter___date], order: DESC }
+		filter: { frontmatter: { category: { in: [$category] } } }
+		limit: $limit
+		skip: $skip
+	  ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date
+            category
+          }
+        }
+      }
+    }
+  }
 `
-
-export default CategoryList
