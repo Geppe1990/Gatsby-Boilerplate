@@ -14,7 +14,7 @@ export default ({ data }) => {
             <SEO
                 title={post.frontmatter.title}
                 description={post.frontmatter.description || post.excerpt || ''}
-                image={imageSource}
+                image={imageSource.src}
                 //pathname={post.fileAbsolutePath}
                 article
             />

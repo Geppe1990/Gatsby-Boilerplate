@@ -10,7 +10,7 @@ module.exports = {
 		title: "Il mio blog",
 		titleTemplate: "%s · The Real Hero",
 		description: "Questa è la descrizione del sito",
-		url: "https://www.doe.com", // No trailing slash allowed!
+		url: "http://localhost:8000", // No trailing slash allowed!
 		image: "/images/snape.jpg", // Path to your image you placed in the 'static' folder
 		twitterUsername: "@geppegram",
 	},
@@ -31,11 +31,11 @@ module.exports = {
 					'gatsby-remark-copy-linked-files',
 					{
 						resolve: 'gatsby-remark-images',
-						// options: {
-						// 	maxWidth: 1500,
-						// 	linkImagesToOriginal: false,
-						// 	withWebp: true,
-						// },
+						options: {
+							maxWidth: 1500,
+							linkImagesToOriginal: false,
+							withWebp: true,
+						},
 					},
 				],
 			},
