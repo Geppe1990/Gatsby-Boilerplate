@@ -3,21 +3,24 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import SEO from "../components/SEO"
+import Img from "gatsby-image"
 
 export default ({ data }) => {
     const post = data.mdx
+    const imageSource = post.frontmatter.image.childImageSharp.fluid
 
     return (
         <Layout>
             <SEO
                 title={post.frontmatter.title}
                 description={post.frontmatter.description || post.excerpt || ''}
-                // image={post.frontmatter.image.childImageSharp.sizes.src}
+                image={imageSource}
                 //pathname={post.fileAbsolutePath}
                 article
             />
 
             <div>
+                <Img fluid={imageSource} />
                 <h1>{post.frontmatter.title}</h1>
                 <div className="tags are-small">
                     {post.frontmatter.category.map((category, i) =>
@@ -39,6 +42,13 @@ export const query = graphql`
             frontmatter {
                 title
                 category
+                image {
+                    childImageSharp {
+                        fluid(maxWidth: 800) {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
             }
             fields {
                 slug

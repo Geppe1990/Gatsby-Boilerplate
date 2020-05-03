@@ -5,6 +5,7 @@ category:
   - test
   - react
 path: "hello-world"
+image: ./pupperino.jpg
 ---
 
 Funziona dentro una cartella! Pandas are really sweet.

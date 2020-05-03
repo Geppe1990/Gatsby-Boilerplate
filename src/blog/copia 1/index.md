@@ -5,6 +5,7 @@ category:
   - news
   - events
 path: pippo-asd
+image: ./pupperino.jpg
 ---
 
 Pandas are really sweet.

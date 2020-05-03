@@ -4,6 +4,7 @@ date: "2017-08-10"
 category:
   - news
   - events
+image: ./pupperino.jpg
 ---
 
 Pandas are really sweet.

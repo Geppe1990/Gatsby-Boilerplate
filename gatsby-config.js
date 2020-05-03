@@ -15,6 +15,7 @@ module.exports = {
 		twitterUsername: "@geppegram",
 	},
 	plugins: [
+		'gatsby-remark-images',
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
@@ -30,17 +31,18 @@ module.exports = {
 					'gatsby-remark-copy-linked-files',
 					{
 						resolve: 'gatsby-remark-images',
-						options: {
-							maxWidth: 1500,
-							linkImagesToOriginal: false,
-							withWebp: true,
-						},
+						// options: {
+						// 	maxWidth: 1500,
+						// 	linkImagesToOriginal: false,
+						// 	withWebp: true,
+						// },
 					},
 				],
 			},
 		},
 		'gatsby-plugin-styled-components',
 		'gatsby-plugin-react-helmet',
+		'gatsby-transformer-sharp',
 		'gatsby-plugin-sharp',
 		// 'gatsby-plugin-feed-mdx',
 		'gatsby-plugin-mdx',
