@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
-import Sidebar from "../components/sidebar"
 import PostExcerpt from "../components/post-excerpt"
 
 export default ({ data, pageContext }) => {
@@ -19,7 +18,7 @@ export default ({ data, pageContext }) => {
 					We're the only site running on your computer dedicated to showing the best photos and videos of pandas eating lots of food.
 				</p>
 			</div>
-			<div className="w-full md:w-2/3 flex flex-col items-center px-3">
+			<div className="w-full flex flex-col items-center px-3">
 				<div className="flex justify-between flex-wrap p-6 bg-gray-300">
 					{data.allMdx.edges.map(({ node }) => (
 						<PostExcerpt
@@ -46,7 +45,6 @@ export default ({ data, pageContext }) => {
 					)}
 				</div>
 			</div>
-			<Sidebar />
 		</Layout>
 	)
 }

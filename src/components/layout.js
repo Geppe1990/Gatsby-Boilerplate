@@ -1,7 +1,6 @@
 import React from "react"
 import Header from "./header"
 import Footer from "./footer"
-import Sidebar from "../components/sidebar"
 import "../css/global.css"
 
 export default ({ children }) => {

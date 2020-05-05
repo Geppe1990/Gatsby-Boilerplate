@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
-import Sidebar from "../components/sidebar"
 import PostExcerpt from "../components/post-excerpt"
 
 export default ({ data, pageContext }) => {
@@ -20,7 +19,7 @@ export default ({ data, pageContext }) => {
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dicta facilis nisi? Consequuntur sit ipsa perferendis, eos voluptas doloremque porro unde, deleniti modi suscipit ipsam quasi exercitationem odio id iure.
 				</p>
 			</div>
-			<div className="w-full md:w-2/3 flex flex-col items-center px-3">
+			<div className="w-full flex flex-col items-center px-3">
 				<div className="flex justify-between flex-wrap p-6 bg-gray-300">
 					{data.allMdx.edges.map(({ node }) => {
 						return (
@@ -49,7 +48,6 @@ export default ({ data, pageContext }) => {
 					)}
 				</div>
 			</div>
-			<Sidebar />
 		</Layout>
 )}
 
