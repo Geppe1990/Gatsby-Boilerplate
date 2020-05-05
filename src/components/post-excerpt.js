@@ -9,7 +9,7 @@ export default ({ id, img, title, excerpt, slug }) => {
             <Img fluid={img} />
             {/* <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains" /> */}
             <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">{title}</div>
+                <h2 className="font-bold text-xl mb-2 uppercase">{title}</h2>
                 <p className="text-gray-700 text-base">
                     {excerpt}
                 </p>

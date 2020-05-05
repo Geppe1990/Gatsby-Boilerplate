@@ -6,7 +6,8 @@ module.exports = {
 		},
 		extend: {
 			fontFamily: {
-				sans: ["Source Code Pro"]
+				sans: ["Red Hat Text"],
+				serif: ["Alfa Slab One"]
 			}
 		}
 	},
