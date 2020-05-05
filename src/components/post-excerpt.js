@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 export default ({ id, img, title, excerpt, slug }) => {
 
 	return (
-        <div key={id} className="max-w-sm rounded overflow-hidden shadow-lg bg-white mb-3">
+        <div key={id} className="flex flex-col shadow my-4 bg-white w-full">
             <Img fluid={img} />
             {/* <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains" /> */}
             <div className="px-6 py-4">
