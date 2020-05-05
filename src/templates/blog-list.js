@@ -18,8 +18,8 @@ export default ({ data, pageContext }) => {
 					We're the only site running on your computer dedicated to showing the best photos and videos of pandas eating lots of food.
 				</p>
 			</div>
-			<div className="w-full flex flex-col items-center px-3">
-				<div className="flex justify-between flex-wrap p-6 bg-gray-300">
+			<div className="w-full flex flex-col items-center">
+				<div className="flex justify-between flex-wrap">
 					{data.allMdx.edges.map(({ node }) => (
 						<PostExcerpt
 							key={node.id}

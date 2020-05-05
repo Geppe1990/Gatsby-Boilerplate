@@ -19,8 +19,8 @@ export default ({ data, pageContext }) => {
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dicta facilis nisi? Consequuntur sit ipsa perferendis, eos voluptas doloremque porro unde, deleniti modi suscipit ipsam quasi exercitationem odio id iure.
 				</p>
 			</div>
-			<div className="w-full flex flex-col items-center px-3">
-				<div className="flex justify-between flex-wrap p-6 bg-gray-300">
+			<div className="w-full flex flex-col items-center">
+				<div className="flex justify-between flex-wrap">
 					{data.allMdx.edges.map(({ node }) => {
 						return (
 							<PostExcerpt
