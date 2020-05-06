@@ -7,7 +7,7 @@
 module.exports = {
 	/* Your site config here */
 	siteMetadata: {
-		title: "Il mio blog",
+		title: "vigneri.me",
 		titleTemplate: "%s · The Real Hero",
 		description: "Questa è la descrizione del sito",
 		url: "http://localhost:8000", // No trailing slash allowed!
