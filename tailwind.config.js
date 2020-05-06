@@ -628,7 +628,7 @@ module.exports = {
 			  serif: ["Alfa Slab One"]
 		  },
 		  colors: {
-			  customGray: '#ececec',
+			  customGray: '#f9fafb',
 			  customRed: '#ef5350'
 		  },
 	  }
