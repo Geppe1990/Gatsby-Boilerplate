@@ -33,15 +33,21 @@ export default ({ data, pageContext }) => {
 				</div>
 				<div className="flex justify-between flex-wrap">
 					{!isFirst && (
-						<Link to={`/blog/${prevPage}`} rel="next">← Previous Page</Link>
+						<Link
+							className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
+							to={`/blog/${prevPage}`} rel="next">← Previous Page</Link>
 					)}
 					{Array.from({ length: numPages }, (_, i) => (
-						<Link key={`pagination-number${i + 1}`} to={`/blog/${i === 0 ? "" : i + 1}`}>
+						<Link 
+							className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
+							key={`pagination-number${i + 1}`} to={`/blog/${i === 0 ? "" : i + 1}`}>
 						{i + 1}
 						</Link>
 					))}
 					{!isLast && (
-						<Link to={`/blog/${nextPage}`} rel="next">Next Page →</Link>
+						<Link 
+						className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
+						to={`/blog/${nextPage}`} rel="next">Next Page →</Link>
 					)}
 				</div>
 			</div>
