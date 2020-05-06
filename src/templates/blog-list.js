@@ -13,7 +13,7 @@ export default ({ data, pageContext }) => {
 	return (
 		<Layout>
 			<div className="w-full p-3">
-				<h1>Blog {data.site.siteMetadata.title}</h1>
+				<h1 className="text-customRed">Blog {data.site.siteMetadata.title}</h1>
 				<p>
 					We're the only site running on your computer dedicated to showing the best photos and videos of pandas eating lots of food.
 				</p>
