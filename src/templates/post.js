@@ -12,7 +12,7 @@ export default ({ data }) => {
 	return (
 		<Layout>
 			<SEO
-				title={`${data.site.siteMetadata.title} "-" ${post.frontmatter.title}`}
+				title={`${data.site.siteMetadata.title} - ${post.frontmatter.title}`}
 				description={post.frontmatter.description || post.excerpt || ''}
 				image={imageSource.src}
 			/>

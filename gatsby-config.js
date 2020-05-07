@@ -20,7 +20,10 @@ module.exports = {
 			resolve: 'gatsby-source-filesystem',
 			options: {
 				name: 'src',
-				path: `${__dirname}/src/`
+				path: `${__dirname}/src/`,
+				maxWidth: 1920,
+				linkImagesToOriginal: false,
+				withWebp: true,
 			},
 		},
 		{

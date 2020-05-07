@@ -14,7 +14,7 @@ export default ({ data, pageContext }) => {
 	return (
 		<Layout>
 			<SEO
-				title={`${data.site.siteMetadata.title} "- Blog"`}
+				title={`${data.site.siteMetadata.title} - Blog`}
 			/>
 			<div className="w-full p-3">
 				<h1 className="text-customRed">Blog {data.site.siteMetadata.title}</h1>

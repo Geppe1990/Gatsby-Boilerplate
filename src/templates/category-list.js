@@ -15,7 +15,7 @@ export default ({ data, pageContext }) => {
 	return (
 		<Layout>
 			<SEO
-				title={`${data.site.siteMetadata.title} "-" ${category}`}
+				title={`${data.site.siteMetadata.title} - ${category}`}
 			/>
 			<div className="w-full p-3">
 				<h1><span className="capitalize">{category}</span> Articles</h1>
