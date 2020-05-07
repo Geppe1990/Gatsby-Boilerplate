@@ -15,9 +15,6 @@ export default ({ data, pageContext }) => {
 		<Layout>
 			<div className="w-full p-3">
 				<h1><span className="capitalize">{category}</span> Articles</h1>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dicta facilis nisi? Consequuntur sit ipsa perferendis, eos voluptas doloremque porro unde, deleniti modi suscipit ipsam quasi exercitationem odio id iure.
-				</p>
 			</div>
 			<div className="w-full flex flex-col items-center">
 				<div className="flex justify-between flex-wrap">

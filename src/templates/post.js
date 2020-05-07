@@ -24,7 +24,7 @@ export default ({ data }) => {
 				<h1>{post.frontmatter.title}</h1>
 				<div className="my-4">
 					{post.frontmatter.category.map((category, i) =>
-						<Link key={i} to={`/${category}`} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{category}</Link>
+						<Link key={i} to={`/${category}/`} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{category}</Link>
 					)}
 				</div>
 
