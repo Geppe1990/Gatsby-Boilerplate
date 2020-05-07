@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import PostExcerpt from "../components/post-excerpt"
+import SEO from "../components/SEO"
 
 export default ({ data, pageContext }) => {
 	const { currentPage, numPages } = pageContext;
@@ -13,6 +14,9 @@ export default ({ data, pageContext }) => {
 
 	return (
 		<Layout>
+			<SEO
+				title={`${data.site.siteMetadata.title} "-" ${category}`}
+			/>
 			<div className="w-full p-3">
 				<h1><span className="capitalize">{category}</span> Articles</h1>
 			</div>
@@ -56,6 +60,11 @@ export default ({ data, pageContext }) => {
 
 export const query = graphql`
 	query blogPostsListByCategory($category: String, $skip: Int!, $limit: Int!) {
+		site {
+			siteMetadata {
+				title
+			}
+		}
 		allMdx(
 			sort: { fields: [frontmatter___date], order: DESC }
 			filter: { frontmatter: { category: { in: [$category] } } }

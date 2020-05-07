@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import PostExcerpt from "../components/post-excerpt"
+import SEO from "../components/SEO"
 
 export default ({ data, pageContext }) => {
 	const { currentPage, numPages } = pageContext;
@@ -12,6 +13,9 @@ export default ({ data, pageContext }) => {
 
 	return (
 		<Layout>
+			<SEO
+				title={`${data.site.siteMetadata.title} "- Blog"`}
+			/>
 			<div className="w-full p-3">
 				<h1 className="text-customRed">Blog {data.site.siteMetadata.title}</h1>
 				<p>

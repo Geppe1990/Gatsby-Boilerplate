@@ -12,11 +12,9 @@ export default ({ data }) => {
 	return (
 		<Layout>
 			<SEO
-				title={post.frontmatter.title}
+				title={`${data.site.siteMetadata.title} "-" ${post.frontmatter.title}`}
 				description={post.frontmatter.description || post.excerpt || ''}
 				image={imageSource.src}
-				//pathname={post.fileAbsolutePath}
-				article
 			/>
 
 			<div className="flex flex-col shadow bg-white w-full px-6 py-4">
@@ -38,6 +36,11 @@ export default ({ data }) => {
 
 export const query = graphql`
 	query($slug: String!) {
+		site {
+			siteMetadata {
+			  title
+			}
+		}
 		mdx(fields: {slug: {eq: $slug } }) {
 			body
 			excerpt
