@@ -10,8 +10,9 @@ module.exports = {
 		title: "vigneri.me",
 		titleTemplate: "%s · The Real Hero",
 		description: "Questa è la descrizione del sito",
-		url: "http://localhost:8000", // No trailing slash allowed!
-		image: "/images/snape.jpg", // Path to your image you placed in the 'static' folder
+		url: "http://localhost:8000",
+		siteUrl: "http://localhost:8000",
+		image: "/images/image.jpg",
 		twitterUsername: "@geppegram",
 	},
 	plugins: [
@@ -47,8 +48,8 @@ module.exports = {
 		'gatsby-plugin-react-helmet',
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-sharp',
-		// 'gatsby-plugin-feed-mdx',
 		'gatsby-plugin-mdx',
-		'gatsby-plugin-postcss'
+		'gatsby-plugin-postcss',
+		'gatsby-plugin-sitemap'
 	],
 }

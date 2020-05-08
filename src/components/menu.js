@@ -19,7 +19,7 @@ export default () => {
 		<nav className="flex items-center justify-between flex-wrap p-6">
 			<div className="">
 				<span className="font-bold text-xl">
-					<Link className="text-customRed" to={`/`}>{`<${data.site.siteMetadata.title}/>`}></Link>
+					<Link className="text-customRed" to={`/`}>{`< ${data.site.siteMetadata.title} />`}</Link>
 				</span>
 			</div>
 
