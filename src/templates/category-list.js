@@ -17,8 +17,8 @@ export default ({ data, pageContext }) => {
 			<SEO
 				title={`${data.site.siteMetadata.title} - ${category}`}
 			/>
-			<div className="w-full p-3">
-				<h1 className="text-retroPink capitalize">{category}</h1>
+			<div className="w-full">
+				<h1 className="mb-4 capitalize">{category}</h1>
 			</div>
 			<div className="w-full flex flex-col items-center">
 				<div className="flex justify-between flex-wrap">
@@ -31,6 +31,8 @@ export default ({ data, pageContext }) => {
 								title={node.frontmatter.title}
 								excerpt={node.excerpt}
 								slug={node.fields.slug}
+								category={node.frontmatter.category}
+								date={node.frontmatter.date}
 							/>
 						)
 					})}

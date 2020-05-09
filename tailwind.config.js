@@ -8,8 +8,8 @@ module.exports = {
 	  screens: {
 		sm: '640px',
 		md: '768px',
-		lg: '1024px',
-		xl: '1280px',
+		lg: '768px',
+		xl: '768px',
 	  },
 	  colors: {
 		transparent: 'transparent',
@@ -631,7 +631,6 @@ module.exports = {
 		  colors: {
 			  customGray: '#f9fafb',
 			  customRed: '#ef5350',
-			  retroPink: '#f6019d',
 		  },
 	  }
 	},

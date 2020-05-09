@@ -16,11 +16,8 @@ export default ({ data, pageContext }) => {
 			<SEO
 				title={`${data.site.siteMetadata.title} - Blog`}
 			/>
-			<div className="w-full p-3">
-				<h1 className="text-retroPink">Blog {data.site.siteMetadata.title}</h1>
-				<p>
-					We're the only site running on your computer dedicated to showing the best photos and videos of pandas eating lots of food.
-				</p>
+			<div className="w-full">
+				<h1 className="mb-4">Blog {data.site.siteMetadata.title}</h1>
 			</div>
 			<div className="w-full flex flex-col items-center">
 				<div className="flex justify-between flex-wrap">
@@ -32,6 +29,8 @@ export default ({ data, pageContext }) => {
 							title={node.frontmatter.title}
 							excerpt={node.excerpt}
 							slug={node.fields.slug}
+							category={node.frontmatter.category}
+							date={node.frontmatter.date}
 						/>
 					))}
 				</div>
@@ -76,6 +75,7 @@ export const query = graphql`
 				node {
 					id
 					frontmatter {
+						category
 						title
 						date(formatString: "DD MMMM, YYYY")
 						image {

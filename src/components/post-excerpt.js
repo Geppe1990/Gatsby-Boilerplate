@@ -1,20 +1,28 @@
 import React from "react"
 import { Link } from "gatsby"
 
-export default ({ id, img, title, excerpt, slug }) => {
+export default ({ id, img, title, excerpt, slug, category, date}) => {
 
 	return (
-        <div key={id} className="flex flex-col shadow my-4 bg-white w-full">
-            <div className="px-6 py-4">
-                <h2 className="text-xl mb-2 uppercase">{title}</h2>
-                <p className="text-gray-700 text-base">
-                    {excerpt}
-                </p>
+        <div className="flex w-full mb-4">
+            <div className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{backgroundImage: `url(${'https://tailwindcss.com/img/card-left.jpg'})`}} title="Woman holding a mug">
             </div>
-            <div className="px-6 py-4">
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 mr-2">
-                    <Link className="text-retroPink" to={slug}>Read More</Link>
-                </span>
+            <div className="w-full border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                <div className="mb-8">
+                    {category.map((cat, i) =>
+                        <p key={i} className="text-sm text-gray-600 inline items-center pr-1">
+                            {cat}
+                        </p>
+                    )}
+                    <Link to={slug} className="block text-gray-900 font-bold text-xl mb-2">{title}</Link>
+                    <p className="text-gray-700 text-base">{excerpt}</p>
+                </div>
+                <div className="flex items-center">
+                    <div className="text-sm">
+                        <p className="text-gray-900 leading-none">Pubblicato il</p>
+                        <p className="text-gray-600">{date}</p>
+                    </div>
+                </div>
             </div>
         </div>
 	)

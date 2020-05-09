@@ -9,27 +9,27 @@ export default () => {
 
             <ul className="page-footer__social">
                 <li>
-                    <a className="border-retroPink border-solid border-b py-1 my-1 block" href="https://codepen.io/bloqhead">
+                    <a className="border- border-solid border-b py-1 my-1 block" href="https://codepen.io/bloqhead">
                         <FontAwesomeIcon icon={faLinkedin} />&nbsp;
-                        <span className="text-retroPink">LinkedIn</span>
+                        <span >LinkedIn</span>
                     </a>
                 </li>
                 <li>
-                    <a className="border-retroPink border-solid border-b py-1 my-1 block" href="https://github.com/bloqhead">
+                    <a className="border- border-solid border-b py-1 my-1 block" href="https://github.com/bloqhead">
                     <FontAwesomeIcon icon={faGithub} />&nbsp;
-                        <span className="text-retroPink">Github</span>
+                        <span >Github</span>
                     </a>
                 </li>
                 <li>
-                    <a className="border-retroPink border-solid border-b py-1 my-1 block" href="https://twitter.com/bloqhead">
+                    <a className="border- border-solid border-b py-1 my-1 block" href="https://twitter.com/bloqhead">
                         <FontAwesomeIcon icon={faTwitter} />&nbsp;
-                        <span className="text-retroPink">Twitter</span>
+                        <span >Twitter</span>
                     </a>
                 </li>
                 <li>
-                    <a className="border-retroPink border-solid border-b py-1 my-1 block" href="https://instagram.com/karmapizza">
+                    <a className="border- border-solid border-b py-1 my-1 block" href="https://instagram.com/karmapizza">
                         <FontAwesomeIcon icon={faInstagram} />&nbsp;
-                        <span className="text-retroPink">Instagram</span>
+                        <span >Instagram</span>
                     </a>
                 </li>
             </ul>
