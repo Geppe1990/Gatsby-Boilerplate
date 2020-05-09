@@ -5,12 +5,14 @@ import "../css/global.css"
 
 export default ({ children }) => {
 	return (
-		<main>
+		<div className="siteWrapper">
 			<Header />
-			<div className="container mx-auto flex flex-wrap py-6 max-w-screen-lg">
-				{children}
-			</div>
+			<main>
+				<div className="container mx-auto flex flex-wrap py-6 max-w-screen-lg">
+					{children}
+				</div>
+			</main>
 			<Footer />
-		</main>
+		</div>
 	)
 }

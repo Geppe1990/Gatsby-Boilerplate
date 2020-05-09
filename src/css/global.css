@@ -44,6 +44,14 @@ body {
 	@apply text-gray-800 bg-customGray;
 }
 
+main {
+	@apply flex-grow;
+}
+
+.siteWrapper {
+	@apply flex flex-col min-h-screen;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	@apply tracking-widest;
 }
