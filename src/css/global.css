@@ -36,11 +36,11 @@
 } */
 
 body {
-	@apply text-gray-800 bg-customGray font-mono;
+	@apply text-gray-800 bg-customGray;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	@apply tracking-widest font-sans;
+	@apply tracking-widest;
 }
 
 h2, h3, h4, h5, h6 {
@@ -48,7 +48,7 @@ h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	@apply text-6xl font-black;
+	@apply text-6xl;
 }
 
 h2 {
