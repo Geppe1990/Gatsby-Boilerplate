@@ -3,37 +3,42 @@
 @font-face {
 	font-family: 'Cartograph Sans';
 	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 	src: url(../fonts/cartograph-sans-cf.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Cartograph Sans';
 	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
 	src: url(../fonts/cartograph-sans-cf-bold.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Cartograph Sans';
 	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
 	src: url(../fonts/cartograph-sans-cf-heavy.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Cartograph Sans';
 	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
 	src: url(../fonts/cartograph-sans-cf-thin.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Cartograph Sans';
 	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
 	src: url(../fonts/cartograph-sans-cf-light.woff) format('woff');
 }
-
-/* @font-face {
-	font-family: 'Cartograph Sans';
-	src: url(/fonts/cartograph-sans-cf-medium.woff) format('woff');
-} */
 
 body {
 	@apply text-gray-800 bg-customGray;
@@ -48,7 +53,7 @@ h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	@apply text-6xl;
+	@apply text-6xl font-black;
 }
 
 h2 {
@@ -60,7 +65,7 @@ h3 {
 }
 
 a {
-	@apply inline-block text-customRed no-underline transition duration-500 ease-in-out transform;
+	@apply inline-block text-retroPink no-underline transition duration-500 ease-in-out transform;
 }
 
 a:hover {
@@ -72,13 +77,16 @@ header nav a {
 }
 
 a[aria-current="page"] {
-	@apply text-customRed;
+	@apply text-retroPink font-black;
+}
+
+p {
+	@apply pb-2;
 }
 
 footer ul {
 	min-width: 200px;
 }
-
 
 @tailwind components;
 @tailwind utilities;

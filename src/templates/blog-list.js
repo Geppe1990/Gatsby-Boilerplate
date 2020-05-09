@@ -17,7 +17,7 @@ export default ({ data, pageContext }) => {
 				title={`${data.site.siteMetadata.title} - Blog`}
 			/>
 			<div className="w-full p-3">
-				<h1 className="text-customRed">Blog {data.site.siteMetadata.title}</h1>
+				<h1 className="text-retroPink">Blog {data.site.siteMetadata.title}</h1>
 				<p>
 					We're the only site running on your computer dedicated to showing the best photos and videos of pandas eating lots of food.
 				</p>

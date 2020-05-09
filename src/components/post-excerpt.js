@@ -13,7 +13,7 @@ export default ({ id, img, title, excerpt, slug }) => {
             </div>
             <div className="px-6 py-4">
                 <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 mr-2">
-                    <Link className="text-customRed" to={slug}>Read More</Link>
+                    <Link className="text-retroPink" to={slug}>Read More</Link>
                 </span>
             </div>
         </div>

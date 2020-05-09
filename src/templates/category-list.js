@@ -18,7 +18,7 @@ export default ({ data, pageContext }) => {
 				title={`${data.site.siteMetadata.title} - ${category}`}
 			/>
 			<div className="w-full p-3">
-				<h1 className="text-customRed capitalize">{category}</h1>
+				<h1 className="text-retroPink capitalize">{category}</h1>
 			</div>
 			<div className="w-full flex flex-col items-center">
 				<div className="flex justify-between flex-wrap">

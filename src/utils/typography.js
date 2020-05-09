@@ -1,7 +1,7 @@
 import Typography from "typography"
 
 const typography = new Typography({
-	baseFontSize: "18px",
+	baseFontSize: "14px",
 	baseLineHeight: 1.666,
 	headerFontFamily: [
 		"Source Sans Pro",
@@ -11,7 +11,8 @@ const typography = new Typography({
 		"Arial",
 		"sans-serif",
 	],
-	bodyFontFamily: ["Georgia", "serif"],
-})
+	bodyFontFamily: ["Cartograph Sans", "Georgia", "serif"],
+},
+)
 
 export default typography

@@ -630,7 +630,8 @@ module.exports = {
 		  },
 		  colors: {
 			  customGray: '#f9fafb',
-			  customRed: '#ef5350'
+			  customRed: '#ef5350',
+			  retroPink: '#f6019d',
 		  },
 	  }
 	},
