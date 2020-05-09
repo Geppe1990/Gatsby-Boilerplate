@@ -68,10 +68,6 @@ a {
 	@apply inline-block no-underline;
 }
 
-a:hover {
-	/* @apply -translate-y-1 scale-110; */
-}
-
 header nav a {
 	@apply uppercase;
 }
@@ -89,7 +85,11 @@ article blockquote {
 }
 
 article .content a {
-	@apply underline;
+	@apply underline transition-all duration-500 ease-in-out;
+}
+
+article .content a:hover {
+	@apply font-black;
 }
 
 article .content p {

@@ -27,7 +27,7 @@ export default ({ data, pageContext }) => {
 							<PostExcerpt
 								key={node.id}
 								id={node.id}
-								img={node.frontmatter.image.childImageSharp.fluid}
+								img={node.frontmatter.image.childImageSharp.fluid.src}
 								title={node.frontmatter.title}
 								excerpt={node.excerpt}
 								slug={node.fields.slug}
@@ -88,6 +88,7 @@ export const query = graphql`
 							childImageSharp {
 								fluid(maxWidth: 800) {
 									...GatsbyImageSharpFluid
+									src
 								}
 							}
 						}
