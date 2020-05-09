@@ -66,6 +66,20 @@ module.exports = {
 		'gatsby-plugin-sharp',
 		'gatsby-plugin-mdx',
 		'gatsby-plugin-postcss',
-		'gatsby-plugin-sitemap'
+		'gatsby-plugin-sitemap',
+		// {
+		// 	resolve: `gatsby-plugin-manifest`,
+		// 	options: {
+		// 	  name: 'vigneri.me',
+		// 	  short_name: 'vigneri',
+		// 	  start_url: '/',
+		// 	  background_color: '#ef5350',
+		// 	  theme_color: '#ef5350',
+		// 	  display: 'standalone',
+		// 	  icon: 'src/assets/images/icon.png',
+		// 	  crossOrigin: `use-credentials`,
+		// 	},
+		// },
+		// 'gatsby-plugin-offline',
 	],
 }
