@@ -624,9 +624,9 @@ module.exports = {
 	  },
 	  extend: {
 		  fontFamily: {
-			  sans: ["Red Hat Text"],
-			  serif: ["alfa-slab-one"],
-			  mono: ["Cartograph Sans"]
+			  sans: [""],
+			  serif: [""],
+			  mono: [""]
 		  },
 		  colors: {
 			  customGray: '#f9fafb',
