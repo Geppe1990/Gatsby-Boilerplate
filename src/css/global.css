@@ -80,7 +80,19 @@ a[aria-current="page"] {
 	@apply font-black;
 }
 
-p {
+/* article {
+
+} */
+
+article blockquote {
+	@apply text-gray-600 border-l-2 border-solid my-3 pl-3;
+}
+
+article .content a {
+	@apply underline;
+}
+
+article .content p {
 	@apply pb-2;
 }
 

@@ -9,25 +9,25 @@ export default () => {
 
             <ul className="page-footer__social">
                 <li>
-                    <a className="border- border-solid border-b py-1 my-1 block" href="https://codepen.io/bloqhead">
+                    <a className="border-solid border-b py-1 my-1 block" href="https://codepen.io/bloqhead">
                         <FontAwesomeIcon icon={faLinkedin} />&nbsp;
                         <span >LinkedIn</span>
                     </a>
                 </li>
                 <li>
-                    <a className="border- border-solid border-b py-1 my-1 block" href="https://github.com/bloqhead">
+                    <a className="border-solid border-b py-1 my-1 block" href="https://github.com/bloqhead">
                     <FontAwesomeIcon icon={faGithub} />&nbsp;
                         <span >Github</span>
                     </a>
                 </li>
                 <li>
-                    <a className="border- border-solid border-b py-1 my-1 block" href="https://twitter.com/bloqhead">
+                    <a className="border-solid border-b py-1 my-1 block" href="https://twitter.com/bloqhead">
                         <FontAwesomeIcon icon={faTwitter} />&nbsp;
                         <span >Twitter</span>
                     </a>
                 </li>
                 <li>
-                    <a className="border- border-solid border-b py-1 my-1 block" href="https://instagram.com/karmapizza">
+                    <a className="border-solid border-b py-1 my-1 block" href="https://instagram.com/karmapizza">
                         <FontAwesomeIcon icon={faInstagram} />&nbsp;
                         <span >Instagram</span>
                     </a>
