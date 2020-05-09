@@ -1,44 +1,41 @@
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub, faTwitter, faInstagram} from '@fortawesome/free-brands-svg-icons'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
+
 
 export default () => {
 
     return (
-        <footer className="flex items-center justify-between flex-wrap p-6">
-            <ul className="page-footer__social">
-                <li>
-                    <a className="border-solid border-b py-1 my-1 block" href="https://codepen.io/bloqhead">
+        <footer className="p-6 flex justify-between">
+            <ul className="text-center inline-block">
+                <li className="inline-block mx-2">
+                    <a className="block" href="https://www.linkedin.com/in/giuseppevigneri/">
                         <FontAwesomeIcon icon={faLinkedin} />&nbsp;
                          <span>LinkedIn</span>
                     </a>
                 </li>
-                <li>
-                    <a className="border-solid border-b py-1 my-1 block" href="https://github.com/bloqhead">
+                <li className="inline-block mx-2">
+                    <a className="block" href="https://github.com/Geppe1990">
                     <FontAwesomeIcon icon={faGithub} />&nbsp;
                          <span>Github</span>
                     </a>
                 </li>
-                <li>
-                    <a className="border-solid border-b py-1 my-1 block" href="https://twitter.com/bloqhead">
+                <li className="inline-block mx-2">
+                    <a className="block" href="https://twitter.com/ioSonoGeppe">
                         <FontAwesomeIcon icon={faTwitter} />&nbsp;
                          <span>Twitter</span>
                     </a>
                 </li>
-                <li>
-                    <a className="border-solid border-b py-1 my-1 block" href="https://instagram.com/karmapizza">
+                <li className="inline-block mx-2">
+                    <a className="block" href="https://www.instagram.com/geppegram/">
                         <FontAwesomeIcon icon={faInstagram} />&nbsp;
                          <span>Instagram</span>
                     </a>
                 </li>
             </ul>
-            <div>
-                <p>© 2020 Vigneri Giuseppe</p>
-                <p>Built with <a className="underline" href="https://gridsome.org/">GatsbyJS.</a></p>
-                <p>
-                    <a className="underline block" href="/uses/">What I use.</a>
-                    <a className="underline block" href="/privacy/">Privacy.</a>
-                </p>
+            <div className="text-center inline-block">
+                Made with <FontAwesomeIcon className="text-customRed" icon={faHeart} />&nbsp;and <a href="https://www.gatsbyjs.org/">GatsbyJS</a> by Giuseppe Vigneri
             </div>
         </footer>
 	)

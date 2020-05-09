@@ -68,6 +68,10 @@ a {
 	@apply inline-block no-underline;
 }
 
+a:hover {
+	@apply underline;
+}
+
 header nav a {
 	@apply uppercase;
 }
@@ -75,10 +79,6 @@ header nav a {
 a[aria-current="page"] {
 	@apply font-black;
 }
-
-/* article {
-
-} */
 
 article blockquote {
 	@apply text-gray-600 border-l-2 border-solid my-3 pl-3;
@@ -94,10 +94,6 @@ article .content a:hover {
 
 article .content p {
 	@apply pb-2;
-}
-
-footer ul {
-	min-width: 200px;
 }
 
 @tailwind components;
