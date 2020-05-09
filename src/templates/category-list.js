@@ -20,7 +20,7 @@ export default ({ data, pageContext }) => {
 			<div className="w-full">
 				<h1 className="mb-4 capitalize">{category}</h1>
 			</div>
-			<div className="w-full flex flex-col items-center">
+			<div className="w-full flex flex-col items-center flex-wrap">
 				<div className="flex justify-between flex-wrap">
 					{data.allMdx.edges.map(({ node }) => {
 						return (

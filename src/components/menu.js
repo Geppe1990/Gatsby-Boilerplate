@@ -17,7 +17,7 @@ export default () => {
 
 	return (
 		<nav className="flex items-center justify-between flex-wrap p-6">
-			<div className="">
+			<div>
 				<span className="text-xl">
 					<Link to={`/`}>{`< ${data.site.siteMetadata.title} />`}</Link>
 				</span>
