@@ -82,7 +82,7 @@ export const query = graphql`
 					excerpt
 					frontmatter {
 						title
-						date
+						date(formatString: "DD MMMM, YYYY", locale: "it")
 						category
 						image {
 							childImageSharp {

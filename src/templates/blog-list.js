@@ -77,7 +77,7 @@ export const query = graphql`
 					frontmatter {
 						category
 						title
-						date(formatString: "DD MMMM, YYYY")
+						date(formatString: "DD MMMM, YYYY", locale: "it")
 						image {
 							childImageSharp {
 								fluid(maxWidth: 800) {
