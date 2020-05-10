@@ -17,7 +17,7 @@ export default ({ data, pageContext }) => {
 				title={`${data.site.siteMetadata.title} - Blog`}
 			/>
 			<div className="w-full">
-				<h1 className="mb-4 text-center">Blog {data.site.siteMetadata.title}</h1>
+				<h1 className="mb-16 text-center">Blog {data.site.siteMetadata.title}</h1>
 			</div>
 			<div className="w-full flex flex-col items-center flex-wrap">
 				<div className="flex justify-between flex-wrap max-w-full">
