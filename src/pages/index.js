@@ -12,7 +12,7 @@ export default ({ data }) => {
 				pathname={data.site.siteMetadata.url}
 			/>
 			<div>
-				<h1>{data.site.siteMetadata.title}</h1>
+				<h1 className="text-center mb-16">{data.site.siteMetadata.title}</h1>
 				<p>Questa è la homepage</p>
 			</div>
 		</Layout>
