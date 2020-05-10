@@ -7,8 +7,8 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons'
 export default () => {
 
     return (
-        <footer className="p-6 flex justify-between">
-            <ul className="text-center inline-block">
+        <footer className="p-6 flex justify-between xs:block">
+            <ul className="text-center inline-block xs:block">
                 <li className="inline-block mx-2">
                     <a className="block" href="https://www.linkedin.com/in/giuseppevigneri/">
                         <FontAwesomeIcon icon={faLinkedin} />&nbsp;
@@ -34,7 +34,7 @@ export default () => {
                     </a>
                 </li>
             </ul>
-            <div className="text-center inline-block">
+            <div className="text-center inline-block xs:block">
                 Made with <FontAwesomeIcon className="text-customRed" icon={faHeart} />&nbsp;and <a href="https://www.gatsbyjs.org/">GatsbyJS</a> by Giuseppe Vigneri
             </div>
         </footer>

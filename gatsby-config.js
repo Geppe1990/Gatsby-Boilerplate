@@ -12,7 +12,7 @@ module.exports = {
 		description: "Questa è la descrizione del sito",
 		url: "http://localhost:8000",
 		siteUrl: "http://localhost:8000",
-		image: "/images/image.jpg",
+		image: "/src/assets/image.jpg",
 		twitterUsername: "@geppegram",
 	},
 	plugins: [
@@ -54,7 +54,7 @@ module.exports = {
 			resolve: "gatsby-plugin-page-progress",
 			options: {
 				includePaths: ["/", { regex: "^/blog/*" }],
-				excludePaths: ["/", "/blog/",],
+				excludePaths: ["/"],
 				height: 3,
 				prependToBody: false,
 				color: `#ef5350`
@@ -67,19 +67,19 @@ module.exports = {
 		'gatsby-plugin-mdx',
 		'gatsby-plugin-postcss',
 		'gatsby-plugin-sitemap',
-		// {
-		// 	resolve: `gatsby-plugin-manifest`,
-		// 	options: {
-		// 	  name: 'vigneri.me',
-		// 	  short_name: 'vigneri',
-		// 	  start_url: '/',
-		// 	  background_color: '#ef5350',
-		// 	  theme_color: '#ef5350',
-		// 	  display: 'standalone',
-		// 	  icon: 'src/assets/images/icon.png',
-		// 	  crossOrigin: `use-credentials`,
-		// 	},
-		// },
-		// 'gatsby-plugin-offline',
+		{
+			resolve: `gatsby-plugin-manifest`,
+			options: {
+				name: 'vigneri.me',
+				short_name: 'vigneri',
+				start_url: '/',
+				background_color: '#ef5350',
+				theme_color: '#ef5350',
+				display: 'standalone',
+				icon: 'src/assets/images/icon.png',
+				crossOrigin: `use-credentials`,
+			},
+		},
+		'gatsby-plugin-offline',
 	],
 }
