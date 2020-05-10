@@ -32,7 +32,7 @@ export default ({ id, img, title, excerpt, slug, category, date}) => {
 
         <div className="w-full lg:flex mb-4 xs:px-4">
             <div className="h-48 lg:h-auto lg:w-56 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{backgroundImage: `url(${img})`}}></div>
-            <div className="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+            <div className="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal w-full">
                 <div className="mb-8">
                     {category.map((cat, i) =>
                         <p key={i} className="text-sm text-gray-600 inline items-center pr-1">
